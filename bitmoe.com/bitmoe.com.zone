@@ -1,0 +1,29 @@
+$ORIGIN bitmoe.com.
+$TTL 3600
+@                   IN      SOA     ns7.bitmoe.com. webmaster.bitmoe.com. (
+                                2015121701          ; 序列号
+                                5H                  ; 从服务器每 5 小时同步一次
+                                3M                  ; 从服务器同步失败 3 分钟后重试
+                                1W                  ; 从服务器一周未能完成数据同步则标志数据过期
+                                1H )                ; 1 小时 TTL 缓存时间
+;           域名记录区
+@           3600    IN      NS      ns7.bitmoe.com.
+@           3600    IN      NS      ns8.bitmoe.com.
+;@           3600    IN      A       104.131.133.165
+@           1200    IN      MX      5 mxn.mxhichina.com.
+@           1200    IN      MX      10 mxw.mxhichina.com.
+@           1200    IN      TXT     v=spf1 include:spf.mxhichina.com -all
+@           600     IN      AAAA    2604:a880:1:20::ce:f001
+@           600     IN      A       198.252.101.149
+mail        1200    IN      CNAME   mail.mxhichina.com.
+www         600     IN      A       198.252.101.149
+www         3600    IN      AAAA    2604:a880:1:20::ce:f001
+ns6         3600    IN      A       119.29.67.165
+ns7         3600    IN      A       104.131.133.165                     ; CentOS 腾讯云 VPS
+ns7         3600    IN      AAAA    2604:a880:1:20::ce:f001
+ns8         3600    IN      A       115.28.110.169                       ; FreeBSD 美国 VPS
+d           600     IN      A       209.99.17.23                        ; 美国
+domain      600     IN      A       123.103.255.100                     ; 香港
+accounts    600     IN      A       198.252.101.149                     ; 新加坡
+bb          600     IN      A       198.252.101.149
+bbb         600     IN      A       198.252.101.149

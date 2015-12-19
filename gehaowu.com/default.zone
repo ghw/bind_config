@@ -1,0 +1,27 @@
+; 个人主页主域 BIND 配置文件: gehaowu.com
+; DNSSEC 签名指令: dnssec-signzone -3 76ADF1 -H 100 -K . -o gehaowu.com -S -u -z gehaowu.com.zone
+$ORIGIN gehaowu.com.
+$TTL    3600
+@               IN      SOA     ns7.gehaowu.com. webmaster.gehaowu.com. (
+                                2015121708          ; 序列号
+                                5H                  ; 从服务器每 5 小时同步一次
+                                3M                  ; 从服务器同步失败 3 分钟后重试
+                                1W                  ; 从服务器一周未能完成数据同步则标志数据过期
+                                1H )                ; 1 小时 TTL 缓存时间
+;           域名记录区
+@       3600    IN      NS      ns7.gehaowu.com.
+@       3600    IN      NS      ns8.gehaowu.com.
+@       600     IN      A       104.131.133.165
+@       600     IN      AAAA    2604:a880:1:20::ce:f001
+@       3600    IN      MX      1 aspmx.l.google.com.
+@       3600    IN      MX      5 alt1.aspmx.l.google.com.
+@       3600    IN      MX      5 alt2.aspmx.l.google.com.
+@       3600    IN      MX      10 aspmx2.googlemail.com.
+@       3600    IN      MX      10 aspmx3.googlemail.com.
+@       3600    IN      TXT     v=spf1 include:_spf.google.com ~all
+@       3600    IN      TXT     google-site-verification=Wb-cpOXROysdAwzcaikFSDfahNFYJ8lJbkx0GFBFb8A
+www     600     IN      A       104.131.133.165
+www     600     IN      AAAA    2604:a880:1:20::ce:f001
+ns7     3600    IN      A       104.131.133.165
+ns7     3600    IN      AAAA    2604:a880:1:20::ce:f001
+ns8     3600    IN      A       115.28.110.169
